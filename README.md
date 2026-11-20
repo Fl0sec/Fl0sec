@@ -5,7 +5,9 @@
 <br>
 
 <p>
-  <img src="./assets/credentials.svg" alt="OSCP · Hack The Box Pro Hacker · TryHackMe Top 2% · C++23, 4+ years" height="34">
+  <a href="https://credentials.offsec.com/79193237"><img src="./assets/credentials.svg" alt="OSCP (verify on OffSec) · Hack The Box Pro Hacker · TryHackMe Top 2% · C++23, 4+ years" height="34"></a>
+  <br>
+  <sub><a href="https://credentials.offsec.com/79193237">Verify OSCP on OffSec</a></sub>
 </p>
 
 I'm **Florent**, an offensive security engineer working under **fl0sec**. I test web apps, APIs and Windows environments, and I spend the rest of my time reversing the low-level code that protects them: kernel drivers, anti-cheats and the Windows internals underneath.
