@@ -41,14 +41,21 @@ function wrap(str, size, maxW, w = 400) {
 }
 
 // Ring 0 mark centered at (cx, cy), scale s (64-unit design). Optional animation classes.
-function mark(cx, cy, s, animated = false) {
+// Lit gradients match public/brand/mark-full.svg (graphite rings, violet glass).
+const LIT_DEFS = `
+  <linearGradient id="la" x1="-24" y1="-26" x2="24" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#c9ccd6"/><stop offset=".45" stop-color="#5d6170"/><stop offset="1" stop-color="#2a2d36"/></linearGradient>
+  <linearGradient id="lb" x1="-18" y1="-19" x2="18" y2="19" gradientUnits="userSpaceOnUse"><stop stop-color="#eceef4"/><stop offset=".5" stop-color="#9a9eab"/><stop offset="1" stop-color="#5b5f6c"/></linearGradient>
+  <linearGradient id="lc" x1="-12" y1="-12" x2="12" y2="12" gradientUnits="userSpaceOnUse"><stop stop-color="#b9b0ff"/><stop offset="1" stop-color="#6553e8"/></linearGradient>
+  <linearGradient id="ld" x1="-6" y1="-6" x2="6" y2="6" gradientUnits="userSpaceOnUse"><stop stop-color="#c4bcff"/><stop offset="1" stop-color="#7c6cf2"/></linearGradient>`
+function mark(cx, cy, s, animated = false, lit = false) {
   const r = (h, rad, op, stroke, cls) =>
-    `<rect${animated ? ` class="${cls}"` : ''} x="${-h}" y="${-h}" width="${2 * h}" height="${2 * h}" rx="${rad}" fill="none" stroke="${stroke}" stroke-opacity="${op}" stroke-width="2.5"/>`
+    `<rect${animated ? ` class="${cls}"` : ''} x="${-h}" y="${-h}" width="${2 * h}" height="${2 * h}" rx="${rad}" fill="none" stroke="${stroke}" stroke-opacity="${op}" stroke-width="2.6"/>`
   return `<g transform="translate(${cx} ${cy}) scale(${s})">
-    ${r(27, 12, 0.22, C.fg, 'r3')}
-    ${r(19.5, 8.5, 0.5, C.fg, 'r2')}
-    ${r(12, 5.5, 1, C.brand, 'r1')}
-    <rect${animated ? ' class="core"' : ''} x="-6" y="-6" width="12" height="12" rx="3" fill="${C.brand}"/>
+    ${lit ? r(27, 12, 1, 'url(#la)', 'r3') : r(27, 12, 0.3, C.fg, 'r3')}
+    ${lit ? r(19.5, 8.5, 1, 'url(#lb)', 'r2') : r(19.5, 8.5, 0.6, C.fg, 'r2')}
+    ${r(12, 5.5, 1, lit ? 'url(#lc)' : C.brand, 'r1')}
+    <rect${animated ? ' class="core"' : ''} x="-6" y="-6" width="12" height="12" rx="3" fill="${lit ? 'url(#ld)' : C.brand}"/>
+    ${lit ? '<rect x="-4.8" y="-5.4" width="9.6" height="1.1" rx=".55" fill="#fff" fill-opacity=".45"/>' : ''}
   </g>`
 }
 
@@ -57,7 +64,7 @@ const dotGrid = (id) => `<pattern id="${id}" width="24" height="24" patternUnits
 // ---------------- Banner ----------------
 function banner() {
   const W = 1200, H = 380
-  const tx = 470
+  const tx = 452
   const title = 'Offensive security,'
   const title2 = 'down to ring 0.'
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
@@ -78,6 +85,7 @@ function banner() {
   @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <defs>
+  ${LIT_DEFS}
   ${dotGrid('dots')}
   <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250 190) scale(260)">
     <stop offset="0" stop-color="${C.brand}" stop-opacity=".32"/><stop offset=".55" stop-color="${C.brand}" stop-opacity=".06"/><stop offset="1" stop-color="${C.brand}" stop-opacity="0"/>
@@ -91,13 +99,13 @@ function banner() {
   <rect width="${W}" height="${H}" fill="url(#dots)"/>
   <rect class="halo" width="${W}" height="${H}" fill="url(#glow)"/>
   <rect class="scan" x="60" y="0" width="380" height="1" fill="url(#fade)"/>
-  ${mark(250, 190, 4.2, true)}
+  ${mark(250, 190, 4.2, true, true)}
   <rect x="0" y="0" width="${W}" height="1" fill="url(#edge)"/>
   ${text('fl0sec', tx, 112, 30, { w: 600, track: -0.035, colors: { 0: C.brand } })}
   ${text('OFFENSIVE SECURITY  ·  PENTESTING  ·  LOW-LEVEL RESEARCH', tx + 132, 108, 13, { w: 600, fill: C.dim, track: 0.14 })}
   ${text(title, tx, 186, 52, { w: 600, track: -0.03 })}
   <g class="glitch">${text(title2, tx, 248, 52, { w: 600, track: -0.03, colors: { 0: C.brandHi } })}</g>
-  ${text('Web, API and Windows pentesting, backed by kernel and anti-cheat research.', tx, 296, 20, { fill: C.muted })}
+  ${text('Web, API and Windows pentesting, backed by kernel and anti-cheat research.', tx, 296, 18.5, { fill: C.muted })}
   ${text('fl0sec.com', tx, 338, 17, { w: 600, fill: C.fg })}
   ${text('·   florent@fl0sec.com', tx + measure('fl0sec.com', 17, 600) + 14, 338, 17, { fill: C.muted })}
   <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="19.5" fill="none" stroke="#fff" stroke-opacity=".08"/>
@@ -169,7 +177,7 @@ const files = {
   'h-research.svg': header('Research'),
   'h-projects.svg': header('Open source'),
   'h-contact.svg': header('Work with me'),
-  'card-pentest.svg': card({ kicker: 'Offensive', title: 'Penetration testing', body: 'Web apps, APIs and Windows environments. Clear findings, proof of impact, and fixes your developers can ship.', foot: 'Web  ·  API  ·  Active Directory' }),
+  'card-pentest.svg': card({ kicker: 'Offensive', title: 'Penetration testing', body: 'Web apps, APIs and Windows environments. Every finding comes with proof and a fix.', foot: 'Web  ·  API  ·  Active Directory' }),
   'card-research.svg': card({ kicker: 'Research', title: 'Low-level & anti-cheat RE', body: 'Kernel drivers, protections and Windows internals: how the mechanism really works, from userland to ring 0.', foot: 'Kernel  ·  Anti-tamper  ·  Syscalls' }),
   'card-tbmke.svg': card({ kicker: 'Reversing  ·  2026-09-13', title: 'Inside a rare kernel anti-cheat CTF', body: 'A game process, a watchdog and a self-signed kernel driver defend two integers. Three small mistakes are enough to take both.', foot: 'fl0sec.com/research' }),
   'card-pivotgate.svg': card({ kicker: 'Windows internals  ·  2026-09-17', title: 'PivotGate: syscalls, no stack fiction', body: "A hidden gap in ntdll's syscall layout becomes an SSN resolver, through the genuine Windows wrapper.", foot: 'fl0sec.com/research' }),

@@ -35,10 +35,8 @@ I'm **Florent**, an offensive security engineer working under **fl0sec**. I test
 
 <img src="./assets/h-contact.svg" alt="Work with me" width="100%">
 
-Need a pentest before launch, or a second pair of eyes on something low-level? Write to me.
+Need a pentest before launch, or a second pair of eyes on something low-level?
 
 <p>
   <a href="mailto:florent@fl0sec.com"><img src="./assets/contact.svg" alt="florent@fl0sec.com · fl0sec.com" height="34"></a>
 </p>
-
-<sub>Testing only with written authorization. Research publishes analysis, never working bypasses.</sub>
