@@ -5,7 +5,11 @@ import fs from 'node:fs'
 import path from 'node:path'
 import opentype from 'opentype.js'
 
-const [fontDir, outDir] = process.argv.slice(2)
+const [fontDir, outDir, brandDir = 'D:/git_sync/fl0sec/brand'] = process.argv.slice(2)
+// Stills of the website's 3D scene, from the brand kit
+const still = (n) => `data:image/png;base64,${fs.readFileSync(path.join(brandDir, 'logo', '3d', n)).toString('base64')}`
+const HERO3D = still('ring0-3d-hero-512.png')
+const ICON3D = still('ring0-3d-icon-64.png')
 fs.mkdirSync(outDir, { recursive: true })
 
 const C = { bg: '#08090b', panel: '#0e1013', fg: '#f4f5f8', muted: '#8a8f98', dim: '#5d626b', line: '#ffffff14', brand: '#7c6cf2', brandHi: '#a99dff' }
@@ -67,7 +71,7 @@ function banner() {
   const tx = 452
   const title = 'Offensive security,'
   const title2 = 'down to ring 0.'
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
 <style>
   .r3,.r2,.r1,.core{transform-box:fill-box;transform-origin:center}
   .r3{animation:breathe 7s cubic-bezier(.45,0,.2,1) infinite}
@@ -75,6 +79,8 @@ function banner() {
   .r1{animation:breathe 7s cubic-bezier(.45,0,.2,1) infinite .5s}
   .core{animation:core 7s ease-in-out infinite}
   .halo{animation:halo 7s ease-in-out infinite}
+  .float{transform-box:fill-box;transform-origin:center;animation:float 8s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-6px) scale(1.02)}}
   .glitch{animation:glitch 9s steps(1) infinite}
   .scan{animation:scan 7s linear infinite}
   @keyframes breathe{0%,100%{transform:scale(1)}45%,55%{transform:scale(1.06)}}
@@ -99,7 +105,7 @@ function banner() {
   <rect width="${W}" height="${H}" fill="url(#dots)"/>
   <rect class="halo" width="${W}" height="${H}" fill="url(#glow)"/>
   <rect class="scan" x="60" y="0" width="380" height="1" fill="url(#fade)"/>
-  ${mark(250, 190, 4.2, true, true)}
+  <g class="float"><image x="80" y="20" width="340" height="340" href="${HERO3D}"/></g>
   <rect x="0" y="0" width="${W}" height="1" fill="url(#edge)"/>
   ${text('fl0sec', tx, 112, 30, { w: 600, track: -0.035, colors: { 0: C.brand } })}
   ${text('OFFENSIVE SECURITY  ·  PENTESTING  ·  LOW-LEVEL RESEARCH', tx + 132, 108, 13, { w: 600, fill: C.dim, track: 0.14 })}
@@ -159,7 +165,7 @@ function header(label, w = 830) {
   const tw = measure(label.toUpperCase(), 12, 600) + 12 * 0.18 * label.length
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">
 <defs><linearGradient id="l" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".14"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
-${mark(9, 20, 0.28)}
+<image x="-2" y="9" width="22" height="22" href="${ICON3D}"/>
 ${text(label.toUpperCase(), 30, 25, 12, { w: 600, fill: C.muted, track: 0.18 })}
 <rect x="${30 + tw + 18}" y="20" width="${w - (30 + tw + 18)}" height="1" fill="url(#l)"/>
 </svg>`
