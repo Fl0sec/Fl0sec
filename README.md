@@ -1,5 +1,5 @@
 <a href="https://www.fl0sec.com">
-  <img src="./assets/banner.svg" alt="fl0sec: offensive security, down to ring 0. Web, API and Windows pentesting, backed by kernel and anti-cheat research." width="100%">
+  <img src="./assets/banner.svg" alt="fl0sec: offensive security, down to ring 0. Pentest and red team, backed by malware, EDR and kernel reverse engineering." width="100%">
 </a>
 
 <br>
@@ -10,7 +10,7 @@
   <sub><a href="https://credentials.offsec.com/79193237">Verify OSCP on OffSec</a></sub>
 </p>
 
-I'm **Florent**, an offensive security engineer working under **fl0sec**. I test web apps, APIs and Windows environments, and I spend the rest of my time reversing the low-level code that protects them: kernel drivers, anti-cheats and the Windows internals underneath.
+I'm **Florent**, an offensive security engineer working under **fl0sec**. I run pentests and red team work on web apps, APIs and Windows, and I spend the rest of my time inside malware, EDRs and the kernel drivers that try to stop attackers.
 
 <br>
 

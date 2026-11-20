@@ -108,10 +108,10 @@ function banner() {
   <g class="float"><image x="80" y="20" width="340" height="340" href="${HERO3D}"/></g>
   <rect x="0" y="0" width="${W}" height="1" fill="url(#edge)"/>
   ${text('fl0sec', tx, 112, 30, { w: 600, track: -0.035, colors: { 0: C.brand } })}
-  ${text('OFFENSIVE SECURITY  ·  PENTESTING  ·  LOW-LEVEL RESEARCH', tx + 132, 108, 13, { w: 600, fill: C.dim, track: 0.14 })}
+  ${text('PENTEST  ·  RED TEAM  ·  MALWARE & EDR  ·  WINDOWS RE', tx + 132, 108, 13, { w: 600, fill: C.dim, track: 0.14 })}
   ${text(title, tx, 186, 52, { w: 600, track: -0.03 })}
   <g class="glitch">${text(title2, tx, 248, 52, { w: 600, track: -0.03, colors: { 0: C.brandHi } })}</g>
-  ${text('Web, API and Windows pentesting, backed by kernel and anti-cheat research.', tx, 296, 18.5, { fill: C.muted })}
+  ${text('Pentest & red team, backed by malware, EDR and kernel reverse engineering.', tx, 296, 18.5, { fill: C.muted })}
   ${text('fl0sec.com', tx, 338, 17, { w: 600, fill: C.fg })}
   ${text('·   florent@fl0sec.com', tx + measure('fl0sec.com', 17, 600) + 14, 338, 17, { fill: C.muted })}
   <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="19.5" fill="none" stroke="#fff" stroke-opacity=".08"/>
@@ -183,8 +183,8 @@ const files = {
   'h-research.svg': header('Research'),
   'h-projects.svg': header('Open source'),
   'h-contact.svg': header('Work with me'),
-  'card-pentest.svg': card({ kicker: 'Offensive', title: 'Penetration testing', body: 'Web apps, APIs and Windows environments. Every finding comes with proof and a fix.', foot: 'Web  ·  API  ·  Active Directory' }),
-  'card-research.svg': card({ kicker: 'Research', title: 'Low-level & anti-cheat RE', body: 'Kernel drivers, protections and Windows internals: how the mechanism really works, from userland to ring 0.', foot: 'Kernel  ·  Anti-tamper  ·  Syscalls' }),
+  'card-pentest.svg': card({ kicker: 'Offensive', title: 'Pentest & red team', body: 'Web apps, APIs, Active Directory and Windows. Every finding comes with proof and a fix.', foot: 'Web  ·  API  ·  AD  ·  Red team' }),
+  'card-research.svg': card({ kicker: 'Detection', title: 'Malware, EDR & Windows RE', body: 'Sample teardowns, EDR hooks and kernel callbacks, anti-cheats and virtualized code, reversed in IDA and WinDbg.', foot: 'Malware  ·  EDR  ·  Kernel' }),
   'card-tbmke.svg': card({ kicker: 'Reversing  ·  2026-09-13', title: 'Inside a rare kernel anti-cheat CTF', body: 'A game process, a watchdog and a self-signed kernel driver defend two integers. Three small mistakes are enough to take both.', foot: 'fl0sec.com/research' }),
   'card-pivotgate.svg': card({ kicker: 'Windows internals  ·  2026-09-17', title: 'PivotGate: syscalls, no stack fiction', body: "A hidden gap in ntdll's syscall layout becomes an SSN resolver, through the genuine Windows wrapper.", foot: 'fl0sec.com/research' }),
   'card-repo-pivotgate.svg': card({ kicker: 'C  ·  repository', title: 'PivotGate', body: 'Measured ntdll geometry and target-owned hardware-breakpoint syscalls, without stack fabrication.', foot: 'github.com/Fl0sec/PivotGate' }),
