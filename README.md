@@ -24,11 +24,21 @@ I'm **Florent**, an offensive security engineer working under **fl0sec**. I run 
 <img src="./assets/h-research.svg" alt="Research" width="100%">
 
 <p>
+  <a href="https://www.fl0sec.com/research/plutonium-bootstrapper-themida"><img src="./assets/card-plutonium.svg" alt="Inside the Plutonium bootstrapper: four Themida VMs and a silent integrity check" width="49%"></a>
+  <a href="https://www.fl0sec.com/research/where-hardware-breakpoint-syscalls-resume"><img src="./assets/card-dr7watch.svg" alt="Where hardware-breakpoint syscalls resume" width="49%"></a>
+</p>
+
+<p>
   <a href="https://www.fl0sec.com/research/kernel-anti-cheat-ctf"><img src="./assets/card-tbmke.svg" alt="Inside a rare kernel anti-cheat CTF" width="49%"></a>
   <a href="https://www.fl0sec.com/research/pivotgate-syscalls-without-stack-fiction"><img src="./assets/card-pivotgate.svg" alt="PivotGate: syscalls without stack fiction" width="49%"></a>
 </p>
 
 <img src="./assets/h-projects.svg" alt="Open source" width="100%">
+
+<p>
+  <a href="https://github.com/Fl0sec/plutonium-devirt"><img src="./assets/card-repo-plutonium.svg" alt="plutonium-devirt repository" width="49%"></a>
+  <a href="https://github.com/Fl0sec/Dr7Watch"><img src="./assets/card-repo-dr7watch.svg" alt="Dr7Watch repository" width="49%"></a>
+</p>
 
 <p>
   <a href="https://github.com/Fl0sec/PivotGate"><img src="./assets/card-repo-pivotgate.svg" alt="PivotGate repository" width="49%"></a>
