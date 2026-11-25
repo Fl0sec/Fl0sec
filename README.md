@@ -5,12 +5,12 @@
 <br>
 
 <p>
-  <a href="https://credentials.offsec.com/79193237"><img src="./assets/credentials.svg" alt="OSCP (verify on OffSec) · Hack The Box Pro Hacker · TryHackMe Top 2% · C++23, 4+ years" height="34"></a>
+  <a href="https://credentials.offsec.com/79193237"><img src="./assets/credentials.svg" alt="OSCP (verify on OffSec) · Hack The Box · TryHackMe · C++23, 4+ years" height="34"></a>
   <br>
-  <sub><a href="https://credentials.offsec.com/79193237">Verify OSCP on OffSec</a></sub>
+  <sub><a href="https://credentials.offsec.com/79193237">Verify OSCP on OffSec</a> · <a href="https://profile.hackthebox.com/profile/019ec090-47e8-7007-9325-d5131b95ab14">Hack The Box</a> · <a href="https://tryhackme.com/p/Fl0sec">TryHackMe</a></sub>
 </p>
 
-I'm **Florent**, an offensive security engineer working under **fl0sec**. I run pentests and red team work on web apps, APIs and Windows, and I spend the rest of my time inside malware, EDRs and the kernel drivers that try to stop attackers.
+I'm **Florent**, an offensive security engineer working under **fl0sec**. I write security tooling in C++, reverse Windows software down to the kernel, and build AI agents that automate the repetitive parts of an audit. I also run pentests and red team work on web apps, APIs and Windows.
 
 <br>
 

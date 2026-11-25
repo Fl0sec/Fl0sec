@@ -175,8 +175,8 @@ const files = {
   'banner.svg': banner(),
   'credentials.svg': chips([
     { label: 'OSCP', dot: C.brand },
-    { label: 'Hack The Box  ·  Pro Hacker', dot: '#9fef00' },
-    { label: 'TryHackMe  ·  Top 2%', dot: '#ff4d4d' },
+    { label: 'Hack The Box', dot: '#9fef00' },
+    { label: 'TryHackMe', dot: '#ff4d4d' },
     { label: 'C++23  ·  4+ years', dot: '#5ea3ff' },
   ]),
   'h-focus.svg': header('What I do'),
