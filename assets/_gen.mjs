@@ -177,7 +177,6 @@ const files = {
     { label: 'OSCP', dot: C.brand },
     { label: 'Hack The Box', dot: '#9fef00' },
     { label: 'TryHackMe', dot: '#ff4d4d' },
-    { label: 'C++23  ·  4+ years', dot: '#5ea3ff' },
   ]),
   'h-focus.svg': header('What I do'),
   'h-research.svg': header('Research'),

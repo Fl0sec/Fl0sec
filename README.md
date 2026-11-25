@@ -5,7 +5,7 @@
 <br>
 
 <p>
-  <a href="https://credentials.offsec.com/79193237"><img src="./assets/credentials.svg" alt="OSCP (verify on OffSec) · Hack The Box · TryHackMe · C++23, 4+ years" height="34"></a>
+  <a href="https://credentials.offsec.com/79193237"><img src="./assets/credentials.svg" alt="OSCP (verify on OffSec) · Hack The Box · TryHackMe" height="34"></a>
   <br>
   <sub><a href="https://credentials.offsec.com/79193237">Verify OSCP on OffSec</a> · <a href="https://profile.hackthebox.com/profile/019ec090-47e8-7007-9325-d5131b95ab14">Hack The Box</a> · <a href="https://tryhackme.com/p/Fl0sec">TryHackMe</a></sub>
 </p>
